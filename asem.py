@@ -114,6 +114,7 @@ CHOICES = {1:'KNN',2:'NB'}
 
 def format_func(option):
 #   return CHOICES[option]
+    CHOICES = {1:'KNN',2:'NB'}
     a=CHOICES[option]
     hasil=a(x_new)
     return hasil
