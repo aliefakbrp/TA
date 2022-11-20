@@ -80,10 +80,10 @@ from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
 
 
-option = st.selectbox(
-     'Pilih Jenis Model yang ingin dipakai',
-     ('KNN', 'Home phone', 'Mobile phone'))
-a = options
+# option = st.selectbox(
+#      'Pilih Jenis Model yang ingin dipakai',
+#      ('KNN', 'Home phone', 'Mobile phone'))
+# a = options
 # st.text('asu')
 fixedacidity
 fixedacidity=st.text_input('asu')
