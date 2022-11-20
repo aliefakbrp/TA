@@ -84,12 +84,12 @@ x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2
 #      'Pilih Jenis Model yang ingin dipakai',
 #      ('KNN', 'Home phone', 'Mobile phone'))
 # a = options
-st.text('asu')
-# fixedacidity=st.text_input('asu')
-# fixedacidity=11
+# st.text('asu')
+fixedacidity=float(st.text_input('asu'))
+fixedacidity=
 
-totChol = st.number_input(format="%i")
-st.write(totChol)
+# totChol = st.text_input(format="%i")
+# st.write(totChol)
 
 
 x_new = [[totChol,	0.28,	0.56,	1.9,	0.075,	17.0,	60.0,	0.99800,	3.16,	0.58,	9.8]]
