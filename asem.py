@@ -85,7 +85,7 @@ x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2
 #      ('KNN', 'Home phone', 'Mobile phone'))
 # a = options
 # st.text('asu')
-fixedacidity
+fixedacidity=0
 fixedacidity=st.text_input('asu')
 fixedacidity=float(fixedacidity)
 
