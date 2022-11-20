@@ -85,8 +85,8 @@ x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2
 #      ('KNN', 'Home phone', 'Mobile phone'))
 # a = options
 st.text('asu')
-fixedacidity=st.text_input('asu')
-fixedacidity=11
+# fixedacidity=st.text_input('asu')
+# fixedacidity=11
 
 totChol = st.number_input(format="%i")
 st.write(totChol)
