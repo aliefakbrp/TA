@@ -80,19 +80,58 @@ from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
 
 
-# option = st.selectbox(
-#      'Pilih Jenis Model yang ingin dipakai',
-#      ('KNN', 'Home phone', 'Mobile phone'))
-# a = options
+option = st.selectbox(
+     'Pilih Jenis Model yang ingin dipakai',
+     ('KNN', 'Home phone', 'Mobile phone'))
+a = options
 # st.text('asu')
+fixedacidity
 fixedacidity=st.text_input('asu')
 fixedacidity=float(fixedacidity)
 
-# totChol = st.text_input(format="%i")
-# st.write(totChol)
+volatileacidity=0
+volatileacidityt=st.text_input('volatile acidity')
+volatileacidityt=float(volatileacidityt)
+
+citricacid=0
+citricacid=st.text_input('citric acid')
+citricacid=float(citricacid)
+
+residualsugar=0
+residualsugar=st.text_input('residual sugar')
+residualsugar=float(residualsugar)
+
+chlorides=0
+chlorides=st.text_input('chlorides')
+chlorides=float(chlorides)
+
+freesulfurdioxide=0
+freesulfurdioxide=st.text_input('free sulfur dioxide')
+freesulfurdioxide=float(freesulfurdioxide)
+
+totalfurdioxide=0
+totalfurdioxide=st.text_input('total sulfur dioxide')
+totalfurdioxide=float(totalfurdioxide)
+
+density=0
+density=st.text_input('density')
+density=float(density)
+
+pH=0
+pH=st.text_input('pH')
+pH=float(pH)
+
+sulphates=0
+sulphates=st.text_input('sulphates')
+sulphates=float(sulphates)
+
+alcohol=0
+alcohol=st.text_input('alcohol')
+alcohol=float(alcohol)
 
 
-x_new = [[fixedacidity,	0.28,	0.56,	1.9,	0.075,	17.0,	60.0,	0.99800,	3.16,	0.58,	9.8]]
+
+x_new = [[fixedacidity,	volatileacidity,	citricacid,	residualsugar,	chlorides,	freesulfurdioxide,	totalfurdioxide,	density,	pH,	sulphates,	alcohol]]
 maximal=0
 minimal=1
 for i in range(len(x_new[0])):
