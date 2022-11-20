@@ -80,10 +80,18 @@ from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
 
 # input
-option = st.selectbox(
-     'Pilih Jenis Model yang ingin dipakai',
-     ('KNN', 'Home phone', 'Mobile phone'))
-a = option
+CHOICES = {1: "KNN", 2: "dataset b", 3: "dataset c"}
+
+def format_func(option):
+    return CHOICES[option]
+
+
+option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
+st.write(f"Pilih model {option} called {format_func(option)}")
+# option = st.selectbox(
+#      'Pilih Jenis Model yang ingin dipakai',
+#      ('KNN', 'Home phone', 'Mobile phone'))
+# a = option
 
 
 x_new = [[11.2,	0.28,	0.56,	1.9,	0.075,	17.0,	60.0,	0.99800,	3.16,	0.58,	9.8]]
