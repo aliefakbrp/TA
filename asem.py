@@ -110,7 +110,7 @@ def KNN(x_new):
 
 # input
 CHOICES = ['KNN','NB']
-pilih
+# pilih
 
 def format_func(option):
   return CHOICES[option]
@@ -122,7 +122,7 @@ def format_func(option):
 
 
 option = st.selectbox("Select option", options=CHOICES, format_func=format_func)
-st.write(f"Model yang dipilih ",option)
+st.write(f"Model yang dipilih ",options)
 
 # mc=option(x_new)
 # st.write("Hasil prediksi adalah ",a(x_new))
