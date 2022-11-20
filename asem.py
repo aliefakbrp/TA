@@ -86,7 +86,7 @@ x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2
 # a = options
 st.text('asu')
 fixedacidity=st.text_input('asu')
-
+fixedacidity=11
 x_new = [[fixedacidity,	0.28,	0.56,	1.9,	0.075,	17.0,	60.0,	0.99800,	3.16,	0.58,	9.8]]
 maximal=0
 minimal=1
