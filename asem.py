@@ -108,4 +108,4 @@ def KNN(x_new):
   return y_predict[0]
 
 # mc=option(x_new)
-st.write("Hasil prediksi adalah ",KNN(x_new)
+st.write("Hasil prediksi adalah ",KNN(x_new))
