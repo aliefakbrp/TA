@@ -112,7 +112,7 @@ def KNN(x_new):
 option = st.selectbox(
     'How would you like to be contacted?',
     ('KNN', 'Home phone', 'Mobile phone'))
-a=str(option[x_new])
+a=str(option)[x_new]
 bst.write(a)
 b
 
