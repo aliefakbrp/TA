@@ -9,7 +9,7 @@ warnings.filterwarnings('ignore', category=UserWarning, append=True)
 # data
 data = 'https://raw.githubusercontent.com/aliefakbrp/dataset/main/wine.csv'
 df = pd.read_csv(data)
-df.head(10)
+# df.head(10)
 
 # pembeda data dan label
 x = df.iloc[:, :-1]
@@ -25,7 +25,7 @@ scaler = sklearn.preprocessing.MinMaxScaler()
 scaled = scaler.fit_transform(x)
 features_names = x.columns.copy()
 scaled_features = pd.DataFrame(scaled, columns=features_names)
-scaled_features
+# scaled_features
 
 # normalisasi inputan
 minmax=[]
@@ -74,7 +74,7 @@ minmax.append(maxs)
 minmax.append(mins)
 minmax.append(maxa)
 minmax.append(mina)
-minmax
+# minmax
 
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
@@ -108,4 +108,4 @@ def KNN(x_new):
   return y_predict[0]
 
 # mc=option(x_new)
-st.write("Hasil prediksi adalah ",mc)
+st.write("Hasil prediksi adalah ",KNN(x_new)
