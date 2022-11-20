@@ -91,7 +91,7 @@ st.write(f"Pilih model {option} called {format_func(option)}")
 # option = st.selectbox(
 #      'Pilih Jenis Model yang ingin dipakai',
 #      ('KNN', 'Home phone', 'Mobile phone'))
-# a = option
+a = option
 
 
 x_new = [[11.2,	0.28,	0.56,	1.9,	0.075,	17.0,	60.0,	0.99800,	3.16,	0.58,	9.8]]
