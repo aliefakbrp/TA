@@ -113,10 +113,10 @@ CHOICES = {1:'KNN',2:'NB'}
 # pilih
 
 def format_func(option):
-  return CHOICES[option]
-#     a=CHOICES[option]
-#     hasil=a(x_new)
-#     return hasil
+#   return CHOICES[option]
+    a=CHOICES[option]
+    hasil=a(x_new)
+    return hasil
 
  
 
