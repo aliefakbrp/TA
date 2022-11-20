@@ -114,7 +114,7 @@ CHOICES = {1:'KNN',2:'NB'}
 
 def format_func(option):
 #   return CHOICES[option]
-    CHOICES = {1:'KNN',2:'NB'}
+#     CHOICES = {1:'KNN',2:'NB'}
     a=CHOICES[option]
     hasil=a(x_new)
     return hasil
@@ -123,7 +123,7 @@ def format_func(option):
 
 
 option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
-st.write(f"Model yang dipilih ",format_func(option))
+st.write(f"Model yang dipilih ",str(format_func(option)))
 
 # mc=option(x_new)
 # st.write("Hasil prediksi adalah ",a(x_new))
