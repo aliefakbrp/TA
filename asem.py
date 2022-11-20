@@ -121,7 +121,7 @@ def format_func(option):
  
 
 
-option = st.selectbox("Select option", options=list(CHOICES.key()), format_func=format_func)
+option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
 st.write(f"Model yang dipilih ",format_func(option))
 
 # mc=option(x_new)
