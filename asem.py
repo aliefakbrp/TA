@@ -109,21 +109,12 @@ def KNN(x_new):
 
 
 # input
-CHOICES = {1:'KNN',2:'NB'}
-# pilih
-
-def format_func(option):
-#   return CHOICES[option]
-#     CHOICES = {1:'KNN',2:'NB'}
-    a=CHOICES[option]
-    hasil=KNN(x_new)
-    return hasil
-
- 
-
-
-option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
-st.write(f"Model yang dipilih ",format_func(option))
+option = st.selectbox(
+    'How would you like to be contacted?',
+    ('KNN', 'Home phone', 'Mobile phone'))
+a=option[x_new]
+bst.write(a)
+b
 
 # mc=option(x_new)
 # st.write("Hasil prediksi adalah ",a(x_new))
