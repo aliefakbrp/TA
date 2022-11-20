@@ -107,5 +107,5 @@ def KNN(x_new):
   y_predict = knn.predict(x_new)
   return y_predict[0]
 
-mc=option(x_new)
+# mc=option(x_new)
 st.write("Hasil prediksi adalah ",mc)
