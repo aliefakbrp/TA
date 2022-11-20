@@ -88,7 +88,7 @@ st.text('asu')
 fixedacidity=st.text_input('asu')
 fixedacidity=11
 
-totChol = st.number_input(label=“cholesterol level in mg/dL”,step=1,format="%i")
+totChol = st.number_input(format="%i")
 st.write(totChol)
 
 
