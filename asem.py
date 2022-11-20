@@ -112,9 +112,11 @@ def KNN(x_new):
 CHOICES = {1: "KNN", 2: "dataset b", 3: "dataset c"}
 
 def format_func(option):
-    a=CHOICES[option]
-    hasil=a(x_new)
-    return hasil
+  return CHOISES[option]
+#     a=CHOICES[option]
+#     hasil=a(x_new)
+#     return hasil
+ 
 
 
 option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
