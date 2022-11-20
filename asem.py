@@ -83,7 +83,7 @@ x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2
 CHOICES = {1: "KNN", 2: "dataset b", 3: "dataset c"}
 
 def format_func(option):
-    a=CHOICES[option]
+    a=str(CHOICES[option])
     hasil=a(x_new)
     return hasil
 
