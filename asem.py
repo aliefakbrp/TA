@@ -83,7 +83,7 @@ x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2
 option = st.selectbox(
      'Pilih Jenis Model yang ingin dipakai',
      ('KNN', 'Home phone', 'Mobile phone'))
-st.write('You selected:', option)
+# st.write('You selected:', option)
 
 
 x_new = [[11.2,	0.28,	0.56,	1.9,	0.075,	17.0,	60.0,	0.99800,	3.16,	0.58,	9.8]]
