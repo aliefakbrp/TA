@@ -79,17 +79,7 @@ minmax.append(mina)
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
 
-# input
-CHOICES = {1: "KNN", 2: "dataset b", 3: "dataset c"}
 
-def format_func(option):
-    a=str(CHOICES[option])
-    hasil=a(x_new)
-    return hasil
-
-
-option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
-st.write(f"Pilih model {option} s {format_func(option)}")
 # option = st.selectbox(
 #      'Pilih Jenis Model yang ingin dipakai',
 #      ('KNN', 'Home phone', 'Mobile phone'))
@@ -116,6 +106,19 @@ def KNN(x_new):
   acc_knn
   y_predict = knn.predict(x_new)
   return y_predict[0]
+
+
+# input
+CHOICES = {1: "KNN", 2: "dataset b", 3: "dataset c"}
+
+def format_func(option):
+    a=str(CHOICES[option])
+    hasil=a(x_new)
+    return hasil
+
+
+option = st.selectbox("Select option", options=list(CHOICES.keys()), format_func=format_func)
+st.write(f"Pilih model {option} s {format_func(option)}")
 
 # mc=option(x_new)
 # st.write("Hasil prediksi adalah ",a(x_new))
