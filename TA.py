@@ -161,5 +161,5 @@ a=option
 b=st.write(a)
 b
 
-# mc=option(x_new)
-# st.write("Hasil prediksi adalah ",a(x_new))
+mc=option(x_new)
+st.write("Hasil prediksi adalah ",b(x_new))
