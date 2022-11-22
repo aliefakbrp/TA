@@ -79,6 +79,45 @@ minmax.append(mina)
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
 
+st.set_page_config(page_title="Alief Akbar Purnama")
+@st.cache()
+def progress():
+    with st.spinner("Bentar ya....."):
+        time.sleep(10)
+        
+st.title("UAS PENDAT")
+
+dataframe, preporcessing, modeling, implementation = st.tabs(
+    ["Wine Quality Data", "Prepocessing", "Modeling", "Implementation"])
+
+with dataframe:
+#     progress()
+    st.write('Data Wine Quality')
+    dataset, ket = st.tabs(['Dataset', 'Ket Dataset'])
+    with ket:
+        st.write("""
+                Column
+                * Gender: Male / Female
+                * Height: Number(cm)
+                * Weight: Number(Kg)
+                * Index
+                Index 
+                * 0 - Extremely Weak
+                * 1 - Weak
+                * 2 - Normal
+                * 3 - Overweight
+                * 4 - Obesity
+                * 5 - Extreme Obesity
+                """)
+    with dataset:
+        st.dataframe(df)
+        
+        
+        
+with preporcessing:
+    progress()
+    st.write('MinMax Scaler')
+    st.dataframe(scaled_features)
 
 # option = st.selectbox(
 #      'Pilih Jenis Model yang ingin dipakai',
@@ -86,7 +125,7 @@ x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2
 # a = options
 # st.text('asu')
 fixedacidity=0
-fixedacidity=st.text_input('asu')
+fixedacidity=st.text_input('fixed acidity')
 fixedacidity=float(fixedacidity)
 
 volatileacidity=0
