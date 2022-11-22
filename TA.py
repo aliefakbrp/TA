@@ -83,7 +83,7 @@ st.set_page_config(page_title="Alief Akbar Purnama")
 @st.cache()
 def progress():
     with st.spinner("Bentar ya....."):
-        time.sleep(10)
+        time.sleep(1)
         
 st.title("UAS PENDAT")
 
@@ -123,7 +123,7 @@ with modeling:
     knn, m2, m3 = st.tabs(
         ["K-Nearest Neighbor","Metode 2", "Metode 3"])
     
-    witch knn:
+    with knn:
 			knn = KNeighborsClassifier(n_neighbors=3)
 			knn.fit(x_train,y_train)
 			y_pred_knn = knn.predict(x_test) 
