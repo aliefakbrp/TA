@@ -124,6 +124,7 @@ with modeling:
         ["K-Nearest Neighbor","Metode 2", "Metode 3"])
     
     with knn:
+        from sklearn.neighbors import KNeighborsClassifier
         knn = KNeighborsClassifier(n_neighbors=3)
         knn.fit(x_train,y_train)
         y_pred_knn = knn.predict(x_test) 
