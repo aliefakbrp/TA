@@ -91,7 +91,7 @@ dataframe, preporcessing, modeling, implementation = st.tabs(
     ["Wine Quality Data", "Prepocessing", "Modeling", "Implementation"])
 
 with dataframe:
-#     progress()
+    progress()
     st.write('Data Wine Quality')
     dataset, ket = st.tabs(['Dataset', 'Ket Dataset'])
     with ket:
