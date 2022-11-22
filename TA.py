@@ -188,23 +188,22 @@ with implementation:
     
 
 
-
+    fixedacidity=float(fixedacidity)
+    volatileacidityt=float(volatileacidityt)
+    citricacid=float(citricacid)
+    residualsugar=float(residualsugar)
+    chlorides=float(chlorides)
+    freesulfurdioxide=float(freesulfurdioxide)
+    totalfurdioxide=float(totalfurdioxide)
+    density=float(density)
+    pH=float(pH)
+    sulphates=float(sulphates)
+    alcohol=float(alcohol)
+      
     x_new = [[fixedacidity,	volatileacidity,	citricacid,	residualsugar,	chlorides,	freesulfurdioxide,	totalfurdioxide,	density,	pH,	sulphates,	alcohol]]
     maximal=0
     minimal=1
     for i in range(len(x_new[0])):
-      fixedacidity=float(fixedacidity)
-      volatileacidityt=float(volatileacidityt)
-      citricacid=float(citricacid)
-      residualsugar=float(residualsugar)
-      chlorides=float(chlorides)
-      freesulfurdioxide=float(freesulfurdioxide)
-      totalfurdioxide=float(totalfurdioxide)
-      density=float(density)
-      pH=float(pH)
-      sulphates=float(sulphates)
-      alcohol=float(alcohol)
-      
       x_new[0][i]=(x_new[0][i]-minmax[minimal])/(minmax[maximal]-minmax[minimal])
       maximal+=2
       minimal+=2
