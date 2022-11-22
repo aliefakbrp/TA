@@ -91,7 +91,6 @@ dataframe, preporcessing, modeling, implementation = st.tabs(
     ["Wine Quality Data", "Prepocessing", "Modeling", "Implementation"])
 
 with dataframe:
-    progress()
     st.write('Data Wine Quality')
     dataset, ket = st.tabs(['Dataset', 'Ket Dataset'])
     with ket:
@@ -115,7 +114,6 @@ with dataframe:
         
         
 with preporcessing:
-    progress()
     st.write('MinMax Scaler')
     st.dataframe(scaled_features)
 
