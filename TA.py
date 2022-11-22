@@ -208,7 +208,12 @@ with implementation:
       maximal+=2
       minimal+=2
     x_new
-    KNN(x_new)
+    from sklearn.neighbors import KNeighborsClassifier 
+    knn = KNeighborsClassifier(n_neighbors=3)
+    knn.fit(x_train,y_train)
+    Y_pred = knn.predict(x_test)
+    y_predict = knn.predict(x_new)
+    st.write("Hasil prediksi adalah",y_predict[0]) 
 
 def KNN(x_new):
   from sklearn.neighbors import KNeighborsClassifier
