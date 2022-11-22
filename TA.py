@@ -116,6 +116,23 @@ with dataframe:
 with preporcessing:
     st.write('MinMax Scaler')
     st.dataframe(scaled_features)
+    
+    
+with modeling:
+    # pisahkan fitur dan label
+    knn, m2, m3 = st.tabs(
+        ["K-Nearest Neighbor","Metode 2", "Metode 3"])
+    
+    witch knn:
+			knn = KNeighborsClassifier(n_neighbors=3)
+			knn.fit(x_train,y_train)
+			y_pred_knn = knn.predict(x_test) 
+			accuracy_knn=round(accuracy_score(y_test,y_pred_knn)* 100, 2)
+			acc_knn = round(knn.score(x_train, y_train) * 100, 2)
+			label_knn = pd.DataFrame(
+            data={'Label Test': y_test, 'Label Predict': y_pred_knn}).reset_index()
+			st.success(f'Tingkat akurasi = {acc_knn}')
+			st.dataframe(label_knn)
 
 # option = st.selectbox(
 #      'Pilih Jenis Model yang ingin dipakai',
