@@ -135,65 +135,81 @@ with modeling:
         st.success(f'Tingkat akurasi = {acc_knn}')
         st.dataframe(label_knn)
 
-# option = st.selectbox(
-#      'Pilih Jenis Model yang ingin dipakai',
-#      ('KNN', 'Home phone', 'Mobile phone'))
-# a = options
-# st.text('asu')
-fixedacidity=0
-fixedacidity=st.text_input('fixed acidity')
-fixedacidity=float(fixedacidity)
 
-volatileacidity=0
-volatileacidityt=st.text_input('volatile acidity')
-volatileacidityt=float(volatileacidityt)
+with implementation:
+    
+    # option = st.selectbox(
+    #      'Pilih Jenis Model yang ingin dipakai',
+    #      ('KNN', 'Home phone', 'Mobile phone'))
+    # a = options
+    # st.text('asu')
+    fixedacidity=0
+    fixedacidity=st.text_input('fixed acidity')
+    
 
-citricacid=0
-citricacid=st.text_input('citric acid')
-citricacid=float(citricacid)
+    volatileacidity=0
+    volatileacidityt=st.text_input('volatile acidity')
+    
 
-residualsugar=0
-residualsugar=st.text_input('residual sugar')
-residualsugar=float(residualsugar)
+    citricacid=0
+    citricacid=st.text_input('citric acid')
+    
 
-chlorides=0
-chlorides=st.text_input('chlorides')
-chlorides=float(chlorides)
+    residualsugar=0
+    residualsugar=st.text_input('residual sugar')
+    
 
-freesulfurdioxide=0
-freesulfurdioxide=st.text_input('free sulfur dioxide')
-freesulfurdioxide=float(freesulfurdioxide)
+    chlorides=0
+    chlorides=st.text_input('chlorides')
+    
 
-totalfurdioxide=0
-totalfurdioxide=st.text_input('total sulfur dioxide')
-totalfurdioxide=float(totalfurdioxide)
+    freesulfurdioxide=0
+    freesulfurdioxide=st.text_input('free sulfur dioxide')
+    
 
-density=0
-density=st.text_input('density')
-density=float(density)
+    totalfurdioxide=0
+    totalfurdioxide=st.text_input('total sulfur dioxide')
+    
 
-pH=0
-pH=st.text_input('pH')
-pH=float(pH)
+    density=0
+    density=st.text_input('density')
+    
 
-sulphates=0
-sulphates=st.text_input('sulphates')
-sulphates=float(sulphates)
+    pH=0
+    pH=st.text_input('pH')
+    
 
-alcohol=0
-alcohol=st.text_input('alcohol')
-alcohol=float(alcohol)
+    sulphates=0
+    sulphates=st.text_input('sulphates')
+    
+
+    alcohol=0
+    alcohol=st.text_input('alcohol')
+    
 
 
 
-x_new = [[fixedacidity,	volatileacidity,	citricacid,	residualsugar,	chlorides,	freesulfurdioxide,	totalfurdioxide,	density,	pH,	sulphates,	alcohol]]
-maximal=0
-minimal=1
-for i in range(len(x_new[0])):
-  x_new[0][i]=(x_new[0][i]-minmax[minimal])/(minmax[maximal]-minmax[minimal])
-  maximal+=2
-  minimal+=2
-x_new
+    x_new = [[fixedacidity,	volatileacidity,	citricacid,	residualsugar,	chlorides,	freesulfurdioxide,	totalfurdioxide,	density,	pH,	sulphates,	alcohol]]
+    maximal=0
+    minimal=1
+    for i in range(len(x_new[0])):
+      fixedacidity=float(fixedacidity)
+      volatileacidityt=float(volatileacidityt)
+      citricacid=float(citricacid)
+      residualsugar=float(residualsugar)
+      chlorides=float(chlorides)
+      freesulfurdioxide=float(freesulfurdioxide)
+      totalfurdioxide=float(totalfurdioxide)
+      density=float(density)
+      pH=float(pH)
+      sulphates=float(sulphates)
+      alcohol=float(alcohol)
+      
+      x_new[0][i]=(x_new[0][i]-minmax[minimal])/(minmax[maximal]-minmax[minimal])
+      maximal+=2
+      minimal+=2
+    x_new
+    KNN(x_new)
 
 def KNN(x_new):
   from sklearn.neighbors import KNeighborsClassifier
@@ -209,12 +225,12 @@ def KNN(x_new):
 
 
 # input
-option = st.selectbox(
-    'How would you like to be contacted?',
-    ['KNN', 'Home phone', 'Mobile phone'])
-a=option
-b=st.write(a)
-b
+# option = st.selectbox(
+#     'How would you like to be contacted?',
+#     ['KNN', 'Home phone', 'Mobile phone'])
+# a=option
+# b=st.write(a)
+# b
 
-mc=option(x_new)
-st.write("Hasil prediksi adalah ",b(x_new))
+# mc=option(x_new)
+# st.write("Hasil prediksi adalah ",b(x_new))
