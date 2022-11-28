@@ -95,7 +95,7 @@ with dataframe:
     dataset, ket = st.tabs(['Dataset', 'Ket Dataset'])
     with ket:
         st.write("""
-                Data : https://www.kaggle.com/datasets/nareshbhat/wine-quality-binary-classification
+                Data : https://www.kaggle.com/datasets/nareshbhat/wine-quality-binary-classification \nline
                 Attribute Information:
                 Input variables (based on physicochemical tests):
                 * 1 - fixed acidity
