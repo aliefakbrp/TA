@@ -96,8 +96,8 @@ with dataframe:
     with ket:
         st.write("""
                 Data : https://www.kaggle.com/datasets/nareshbhat/wine-quality-binary-classification
-                * Attribute Information:
-                * Input variables (based on physicochemical tests):
+                Attribute Information:
+                Input variables (based on physicochemical tests):
                 * 1 - fixed acidity
                 * 2 - volatile acidity
                 * 3 - citric acid
