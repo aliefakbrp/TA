@@ -95,18 +95,8 @@ with dataframe:
     dataset, ket = st.tabs(['Dataset', 'Ket Dataset'])
     with ket:
         st.write("""
-                Column
-                * Gender: Male / Female
-                * Height: Number(cm)
-                * Weight: Number(Kg)
-                * Index
-                Index 
-                * 0 - Extremely Weak
-                * 1 - Weak
-                * 2 - Normal
-                * 3 - Overweight
-                * 4 - Obesity
-                * 5 - Extreme Obesity
+                Masih belum
+                coming soon
                 """)
     with dataset:
         st.dataframe(df)
