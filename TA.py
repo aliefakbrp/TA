@@ -202,9 +202,11 @@ with implementation:
     # a = options
     # st.text('asu')
     fixedacidity=0
-    st.write("""fixed acidity 
+    st.write("""
+    fixed acidity 
             * hallo 
-            * hello it's me""")
+            * hello it's me
+            """)
     fixedacidity=st.text_input('fixed acidity')
     
 
