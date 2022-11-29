@@ -178,7 +178,7 @@ with modeling:
     with pk:
         from sklearn.tree import DecisionTreeClassifier, export_graphviz
         d3 = DecisionTreeClassifier()
-        d3.fit(X_train, y_train)
+        d3.fit(x_train, y_train)
         data_predic = pd.concat([pd.DataFrame(y_test).reset_index(drop=True), pd.DataFrame(y_predic, columns=["Predict"]).reset_index(drop=True)], axis=1)
         data_predic
         from sklearn.metrics import accuracy_score
