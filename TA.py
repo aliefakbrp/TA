@@ -134,7 +134,7 @@ with modeling:
         y_pred_knn = knn.predict(x_test) 
         accuracy_knn=round(accuracy_score(y_test,y_pred_knn)* 100, 2)
         acc_knn = round(knn.score(x_train, y_train) * 100, 2)
-        label_knn = pd.DataFrame(
+        label_knn = pd.DataFrame()
         data={'Label Test': y_test, 'Label Predict': y_pred_knn}).reset_index()
         st.success(f'Tingkat akurasi = {acc_knn}')
         st.dataframe(label_knn)
@@ -179,6 +179,8 @@ with modeling:
         from sklearn.tree import DecisionTreeClassifier, export_graphviz
         d3 = DecisionTreeClassifier()
         d3.fit(x_train, y_train)
+        y_predic = d3.predict(X_test)
+        y_predic
         data_predic = pd.concat([pd.DataFrame(y_test).reset_index(drop=True), pd.DataFrame(y_predic, columns=["Predict"]).reset_index(drop=True)], axis=1)
         data_predic
         from sklearn.metrics import accuracy_score
