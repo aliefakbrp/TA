@@ -158,7 +158,8 @@ with modeling:
         gaussian = GaussianNB()
         # 
         gaussian.fit(x_train, y_train)
-        Y_pred = gaussian.predict(x_test) 
+        y_pred = gaussian.predict(x_test)
+        data_predic_nb = pd.concat([pd.DataFrame(y_test).reset_index(drop=True), pd.DataFrame(y_predic, columns=["Predict"]).reset_index(drop=True)], axis=1)        
         accuracy_nb=round(accuracy_score(y_test,Y_pred)* 100, 2)
         acc_gaussian = round(gaussian.score(x_train, y_train) * 100, 2)
 
@@ -173,7 +174,7 @@ with modeling:
         print('recall_Naive Bayes: %.3f' %recall)
         print('f1-score_random_Forest : %.3f' %f1)
         st.success(f'Tingkat akurasi = {accuracy}')
-        Y_pred
+        data_predic_nb
 
         
     with pk:
