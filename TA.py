@@ -98,17 +98,17 @@ with dataframe:
                 Data : https://www.kaggle.com/datasets/nareshbhat/wine-quality-binary-classification
                 * Attribute Information:
                 Input variables (based on physicochemical tests):
-                * 1 - fixed acidity
-                * 2 - volatile acidity
-                * 3 - citric acid
-                * 4 - residual sugar
-                * 5 - chlorides
-                * 6 - free sulfur dioxide
-                * 7 - total sulfur dioxide
-                * 8 - density
-                * 9 - pH
-                * 10 - sulphates
-                * 11 - alcohol
+                * 1 - fixed acidity : sebagian besar asam terlibat dengan anggur atau tetap atau tidak mudah menguap (tidak mudah menguap)
+                * 2 - volatile acidity : jumlah asam asetat dalam anggur, yang pada kadar yang terlalu tinggi dapat menyebabkan rasa cuka yang tidak enak
+                * 3 - citric acid : ditemukan dalam jumlah kecil, asam sitrat dapat menambah 'kesegaran' dan rasa anggur
+                * 4 - residual sugar : jumlah gula yang tersisa setelah fermentasi berhenti, jarang ditemukan wine dengan berat kurang dari 1 gram/liter dan wine dengan berat lebih dari 45 gram/liter dianggap manis
+                * 5 - chlorides : jumlah garam dalam anggur
+                * 6 - free sulfur dioxide : bentuk bebas SO2 ada dalam kesetimbangan antara molekul SO2 (sebagai gas terlarut) dan ion bisulfit;  itu mencegah pertumbuhan mikroba dan oksidasi anggur
+                * 7 - total sulfur dioxide : jumlah bentuk bebas dan terikat dari S02;  dalam konsentrasi rendah, SO2 sebagian besar tidak terdeteksi dalam anggur, tetapi pada konsentrasi SO2 bebas lebih dari 50 ppm, SO2 menjadi jelas di hidung dan rasa anggur
+                * 8 - density : kerapatan air mendekati kerapatan air tergantung pada persen alkohol dan kandungan gula
+                * 9 - pH : menjelaskan seberapa asam atau basa anggur dalam skala dari 0 (sangat asam) hingga 14 (sangat basa);  kebanyakan anggur antara 3-4 pada skala pH
+                * 10 - sulphates : aditif anggur yang dapat berkontribusi pada kadar gas sulfur dioksida (S02), yang bertindak sebagai antimikroba dan antioksidan
+                * 11 - alcohol : persen kandungan alkohol anggur
                 Output variable (based on sensory data):
                 * 12 - quality 
                 """)
