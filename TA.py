@@ -173,6 +173,7 @@ with modeling:
         print('recall_Naive Bayes: %.3f' %recall)
         print('f1-score_random_Forest : %.3f' %f1)
         st.success(f'Tingkat akurasi = {accuracy}')
+        Y_pred
 
         
     with pk:
