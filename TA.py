@@ -134,7 +134,7 @@ with modeling:
         y_pred_knn = knn.predict(x_test) 
         accuracy_knn=round(accuracy_score(y_test,y_pred_knn)* 100, 2)
         acc_knn = round(knn.score(x_train, y_train) * 100, 2)
-        label_knn = pd.DataFrame()
+        label_knn = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_pred_knn}).reset_index()
         st.success(f'Tingkat akurasi = {acc_knn}')
         st.dataframe(label_knn)
