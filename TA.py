@@ -279,16 +279,51 @@ with implementation:
     st.write("Hasil prediksi adalah",y_predict[0]) 
 
 def KNN(x_new):
-  from sklearn.neighbors import KNeighborsClassifier
-  knn = KNeighborsClassifier(n_neighbors=3)
-  knn.fit(x_train,y_train)
-  Y_pred = knn.predict(x_test) 
-  accuracy_knn=round(accuracy_score(y_test,Y_pred)* 100, 2)
-  acc_knn = round(knn.score(x_train, y_train) * 100, 2)
-  accuracy_knn
-  acc_knn
-  y_predict = knn.predict(x_new)
-  return y_predict[0]
+#   from sklearn.neighbors import KNeighborsClassifier
+#   knn = KNeighborsClassifier(n_neighbors=3)
+#   knn.fit(x_train,y_train)
+#   Y_pred = knn.predict(x_test) 
+#   accuracy_knn=round(accuracy_score(y_test,Y_pred)* 100, 2)
+#   acc_knn = round(knn.score(x_train, y_train) * 100, 2)
+#   accuracy_knn
+#   acc_knn
+#   y_predict = knn.predict(x_new)
+#   return y_predict[0]
+
+        # library for Naive Bayes Gaussian
+        from sklearn.naive_bayes import GaussianNB
+        from sklearn.metrics import accuracy_score
+        from sklearn.metrics import make_scorer, accuracy_score,precision_score
+        from sklearn.metrics import classification_report
+        from sklearn.metrics import confusion_matrix
+        from sklearn.metrics import precision_score,recall_score,f1_score
+        from sklearn.preprocessing import LabelEncoder
+
+        #Model Select
+        from sklearn.model_selection import train_test_split
+        from sklearn.naive_bayes import GaussianNB
+
+
+        # classifier
+        gaussian = GaussianNB()
+        # 
+        gaussian.fit(x_train, y_train)
+        y_pred_nb = gaussian.predict(x_new)
+        st.write(y_pred_nb)
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # input
