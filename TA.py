@@ -124,7 +124,7 @@ with preporcessing:
     
 with modeling:
     # pisahkan fitur dan label
-    knn, m2, m3 = st.tabs(
+    knn, nb, m3 = st.tabs(
         ["K-Nearest Neighbor","Metode 2", "Metode 3"])
     
     with knn:
@@ -138,6 +138,41 @@ with modeling:
         data={'Label Test': y_test, 'Label Predict': y_pred_knn}).reset_index()
         st.success(f'Tingkat akurasi = {acc_knn}')
         st.dataframe(label_knn)
+        
+    with nb:
+        # library for Naive Bayes Gaussian
+        from sklearn.naive_bayes import GaussianNB
+        from sklearn.metrics import accuracy_score
+        from sklearn.metrics import make_scorer, accuracy_score,precision_score
+        from sklearn.metrics import classification_report
+        from sklearn.metrics import confusion_matrix
+        from sklearn.metrics import precision_score,recall_score,f1_score
+        from sklearn.preprocessing import LabelEncoder
+
+        #Model Select
+        from sklearn.model_selection import train_test_split
+        from sklearn.naive_bayes import GaussianNB
+
+
+        # classifier
+        gaussian = GaussianNB()
+        # 
+        gaussian.fit(x_train, y_train)
+        Y_pred = gaussian.predict(x_test) 
+        accuracy_nb=round(accuracy_score(y_test,Y_pred)* 100, 2)
+        acc_gaussian = round(gaussian.score(x_train, y_train) * 100, 2)
+
+        cm = confusion_matrix(y_test, Y_pred)
+        accuracy = accuracy_score(y_test,Y_pred)
+        precision =precision_score(y_test, Y_pred,average='micro')
+        recall =  recall_score(y_test, Y_pred,average='micro')
+        f1 = f1_score(y_test,Y_pred,average='micro')
+        print('Confusion matrix for Naive Bayes\n',cm)
+        print('accuracy_Naive Bayes: %.3f' %accuracy)
+        print('precision_Naive Bayes: %.3f' %precision)
+        print('recall_Naive Bayes: %.3f' %recall)
+        print('f1-score_random_Forest : %.3f' %f1)
+        st.success(f'Tingkat akurasi = {accuracy}')
 
 
 with implementation:
