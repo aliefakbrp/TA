@@ -124,7 +124,7 @@ with preporcessing:
     
 with modeling:
     # pisahkan fitur dan label
-    knn, nb, m3 = st.tabs(
+    knn, nb, pk = st.tabs(
         ["K-Nearest Neighbor","Metode 2", "Metode 3"])
     
     with knn:
@@ -174,7 +174,22 @@ with modeling:
         print('f1-score_random_Forest : %.3f' %f1)
         st.success(f'Tingkat akurasi = {accuracy}')
 
-
+        
+    with pk:
+        from sklearn.tree import DecisionTreeClassifier, export_graphviz
+        d3 = DecisionTreeClassifier()
+        d3.fit(X_train, y_train)
+        data_predic = pd.concat([pd.DataFrame(y_test).reset_index(drop=True), pd.DataFrame(y_predic, columns=["Predict"]).reset_index(drop=True)], axis=1)
+        data_predic
+        from sklearn.metrics import accuracy_score
+        a=f'acuraty = {"{:,.2f}".format(accuracy_score(y_test, y_predic)*100)}%'
+        st.success(a)
+        
+        
+        
+        
+        
+    
 with implementation:
     
     # option = st.selectbox(
