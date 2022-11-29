@@ -175,7 +175,7 @@ with modeling:
         print('recall_Naive Bayes: %.3f' %recall)
         print('f1-score_random_Forest : %.3f' %f1)
         st.success(f'Tingkat akurasi = {accuracy*100}')
-        label_nb.drop('index')
+        label_nb
 
         
     with pk:
