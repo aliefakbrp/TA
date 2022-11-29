@@ -203,7 +203,8 @@ with implementation:
     # st.text('asu')
     fixedacidity=0
     st.write("""fixed acidity 
-            * hallo""")
+            * hallo 
+            * hello it's me""")
     fixedacidity=st.text_input('fixed acidity')
     
 
