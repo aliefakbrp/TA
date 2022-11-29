@@ -160,7 +160,7 @@ with modeling:
         gaussian.fit(x_train, y_train)
         y_pred_nb = gaussian.predict(x_test)
         label_nb = pd.DataFrame(
-        data={'Label Test': y_test, 'Label Predict': y_pred_nb}).reset_index()
+        data={'Label Test': y_test, 'Label Predict': y_pred_nb})
         accuracy_nb=round(accuracy_score(y_test,y_pred_nb)* 100, 2)
         acc_gaussian = round(gaussian.score(x_train, y_train) * 100, 2)
 
@@ -174,7 +174,7 @@ with modeling:
         print('precision_Naive Bayes: %.3f' %precision)
         print('recall_Naive Bayes: %.3f' %recall)
         print('f1-score_random_Forest : %.3f' %f1)
-        st.success(f'Tingkat akurasi = {accuracy*100}')
+        st.success(f'Tingkat akurasi = {accuracy*100}%')
         label_nb
 
         
