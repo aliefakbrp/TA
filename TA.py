@@ -130,16 +130,16 @@ with modeling:
     
     with knn:
         from sklearn.neighbors import KNeighborsClassifier
-        knn = KNeighborsClassifier(n_neighbors=1)
+        knn = KNeighborsClassifier(n_neighbors=2)
         knn.fit(x_train,y_train)
 #         knn = joblib.load('knn.pkl')
 #         knn = joblib.load('knn1.pkl')
         y_pred_knn = knn.predict(x_test) 
         accuracy_knn=round(accuracy_score(y_test,y_pred_knn)* 100, 2)
-#         acc_knn = round(knn.score(x_train, y_train) * 100, 2)
+        acc_knn = round(knn.score(x_train, y_train) * 100, 2)
         label_knn = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_pred_knn})
-        st.success(f'Tingkat akurasi = {accuracy_knn}')
+        st.success(f'Tingkat akurasi = {acc_knn}')
         st.dataframe(label_knn)
         
     with nb:
@@ -170,14 +170,6 @@ with modeling:
 
         cm = confusion_matrix(y_test, y_pred_nb)
         accuracy = accuracy_score(y_test,y_pred_nb)
-        precision =precision_score(y_test, y_pred_nb,average='micro')
-        recall =  recall_score(y_test, y_pred_nb,average='micro')
-        f1 = f1_score(y_test,y_pred_nb,average='micro')
-        print('Confusion matrix for Naive Bayes\n',cm)
-        print('accuracy_Naive Bayes: %.3f' %accuracy)
-        print('precision_Naive Bayes: %.3f' %precision)
-        print('recall_Naive Bayes: %.3f' %recall)
-        print('f1-score_random_Forest : %.3f' %f1)
         st.success(f'Tingkat akurasi = {accuracy*100}%')
         label_nb
 
