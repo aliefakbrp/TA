@@ -139,8 +139,9 @@ with modeling:
         acc_knn = round(knn.score(x_train, y_train) * 100, 2)
         label_knn = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_pred_knn})
-        st.success(f'Tingkat akurasi = {acc_knn}')
-        st.dataframe(label_knn)
+        st.success(f'Tingkat akurasi = {acc_knn}%')
+#         st.dataframe(label_knn)
+        label_knn
         
     with nb:
         # library for Naive Bayes Gaussian
