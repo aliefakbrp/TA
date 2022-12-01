@@ -130,9 +130,10 @@ with modeling:
     
     with knn:
         from sklearn.neighbors import KNeighborsClassifier
-        knn = KNeighborsClassifier(n_neighbors=1)
-        knn.fit(x_train,y_train)
+#         knn = KNeighborsClassifier(n_neighbors=1)
+#         knn.fit(x_train,y_train)
 #         knn = joblib.load('knn.pkl')
+        knn = joblib.load('knn1.pkl')
         y_pred_knn = knn.predict(x_test) 
         accuracy_knn=round(accuracy_score(y_test,y_pred_knn)* 100, 2)
         acc_knn = round(knn.score(x_train, y_train) * 100, 2)
