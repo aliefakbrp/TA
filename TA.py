@@ -130,7 +130,7 @@ with modeling:
     
     with knn:
         from sklearn.neighbors import KNeighborsClassifier
-        knn = KNeighborsClassifier(n_neighbors=1)
+        knn = KNeighborsClassifier(n_neighbors=2)
         knn.fit(x_train,y_train)
 #         knn = joblib.load('knn.pkl')
 #         knn = joblib.load('knn1.pkl')
