@@ -129,10 +129,10 @@ with modeling:
         ["K-Nearest Neighbor","Metode 2", "Metode 3"])
     
     with knn:
-#         from sklearn.neighbors import KNeighborsClassifier
-#         knn = KNeighborsClassifier(n_neighbors=3)
-#         knn.fit(x_train,y_train)
-        knn = joblib.load('knn.pkl')
+        from sklearn.neighbors import KNeighborsClassifier
+        knn = KNeighborsClassifier(n_neighbors=1)
+        knn.fit(x_train,y_train)
+#         knn = joblib.load('knn.pkl')
         y_pred_knn = knn.predict(x_test) 
         accuracy_knn=round(accuracy_score(y_test,y_pred_knn)* 100, 2)
         acc_knn = round(knn.score(x_train, y_train) * 100, 2)
@@ -156,11 +156,11 @@ with modeling:
         from sklearn.naive_bayes import GaussianNB
 
 
-#         # classifier
-#         gaussian = GaussianNB()
-#         # 
-#         gaussian.fit(x_train, y_train)
-        gaussian = joblib.load('gaussian.pkl')
+        # classifier
+        gaussian = GaussianNB()
+        # 
+        gaussian.fit(x_train, y_train)
+#         gaussian = joblib.load('gaussian.pkl')
         y_pred_nb = gaussian.predict(x_test)
         label_nb = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_pred_nb})
@@ -182,10 +182,10 @@ with modeling:
 
         
     with pk:
-#         from sklearn.tree import DecisionTreeClassifier, export_graphviz
-#         d3 = DecisionTreeClassifier()
-#         d3.fit(x_train, y_train)
-        d3 = joblib.load('d3.pkl')
+        from sklearn.tree import DecisionTreeClassifier, export_graphviz
+        d3 = DecisionTreeClassifier()
+        d3.fit(x_train, y_train)
+#         d3 = joblib.load('d3.pkl')
         y_predic = d3.predict(x_test)
         data_predic = pd.concat([pd.DataFrame(y_test).reset_index(drop=True), pd.DataFrame(y_predic, columns=["Predict"]).reset_index(drop=True)], axis=1)        
         from sklearn.metrics import accuracy_score
