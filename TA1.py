@@ -25,6 +25,10 @@ features_names = x.columns.copy()
 scaled_features = pd.DataFrame(scaled, columns=features_names)
 # scaled_features
 
+# splitdata
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
+
 # normalisasi inputan
 minmax=[]
 maxfa = max(x_train[:]["fixed acidity"])
@@ -74,8 +78,7 @@ minmax.append(maxa)
 minmax.append(mina)
 # minmax
 
-from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
+
 
 st.set_page_config(page_title="Alief Akbar Purnama")
 @st.cache()
