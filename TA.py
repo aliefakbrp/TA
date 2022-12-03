@@ -17,9 +17,6 @@ x = df.iloc[:, :-1]
 y = df.loc[:, "quality"]
 y = df['quality'].values
 
-# split data
-from sklearn.model_selection import train_test_split
-x_trainx,x_testx,y_trainx,y_testx = train_test_split(x,y,test_size=0.2,random_state=1)
 
 #  normalisasi
 scaler = sklearn.preprocessing.MinMaxScaler()
@@ -28,30 +25,34 @@ features_names = x.columns.copy()
 scaled_features = pd.DataFrame(scaled, columns=features_names)
 # scaled_features
 
+# splitdata
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
+
 # normalisasi inputan
 minmax=[]
-maxfa = max(x_trainx[:]["fixed acidity"])
-minfa = min(x_trainx[:]["fixed acidity"])
-maxva = max(x_trainx[:]["volatile acidity"])
-minva = min(x_trainx[:]["volatile acidity"])
-maxca = max(x_trainx[:]["citric acid"])
-minca = min(x_trainx[:]["citric acid"])
-maxrs = max(x_trainx[:]["residual sugar"])
-minrs = min(x_trainx[:]["residual sugar"])
-maxc = max(x_trainx[:]["chlorides"])
-minc = min(x_trainx[:]["chlorides"])
-maxfsd = max(x_trainx[:]["free sulfur dioxide"])
-minfsd = min(x_trainx[:]["free sulfur dioxide"])
-maxtsd = max(x_trainx[:]["total sulfur dioxide"])
-mintsd = min(x_trainx[:]["total sulfur dioxide"])
-maxd = max(x_trainx[:]["density"])
-mind = min(x_trainx[:]["density"])
-maxpH = max(x_trainx[:]["pH"])
-minpH = min(x_trainx[:]["pH"])
-maxs = max(x_trainx[:]["sulphates"])
-mins = min(x_trainx[:]["sulphates"])
-maxa = max(x_trainx[:]["alcohol"])
-mina = min(x_trainx[:]["alcohol"])
+maxfa = max(x_train[:]["fixed acidity"])
+minfa = min(x_train[:]["fixed acidity"])
+maxva = max(x_train[:]["volatile acidity"])
+minva = min(x_train[:]["volatile acidity"])
+maxca = max(x_train[:]["citric acid"])
+minca = min(x_train[:]["citric acid"])
+maxrs = max(x_train[:]["residual sugar"])
+minrs = min(x_train[:]["residual sugar"])
+maxc = max(x_train[:]["chlorides"])
+minc = min(x_train[:]["chlorides"])
+maxfsd = max(x_train[:]["free sulfur dioxide"])
+minfsd = min(x_train[:]["free sulfur dioxide"])
+maxtsd = max(x_train[:]["total sulfur dioxide"])
+mintsd = min(x_train[:]["total sulfur dioxide"])
+maxd = max(x_train[:]["density"])
+mind = min(x_train[:]["density"])
+maxpH = max(x_train[:]["pH"])
+minpH = min(x_train[:]["pH"])
+maxs = max(x_train[:]["sulphates"])
+mins = min(x_train[:]["sulphates"])
+maxa = max(x_train[:]["alcohol"])
+mina = min(x_train[:]["alcohol"])
 
 minmax.append(maxfa)
 minmax.append(minfa)
@@ -77,8 +78,7 @@ minmax.append(maxa)
 minmax.append(mina)
 # minmax
 
-from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test = train_test_split(scaled_features,y,test_size=0.2,random_state=1)
+
 
 st.set_page_config(page_title="Alief Akbar Purnama")
 @st.cache()
@@ -128,19 +128,15 @@ with modeling:
     knn, nb, pk = st.tabs(
         ["K-Nearest Neighbor","Metode 2", "Metode 3"])
     
-    with knn:
-        from sklearn.neighbors import KNeighborsClassifier
-        knn = KNeighborsClassifier(n_neighbors=2)
-        knn.fit(x_train,y_train)
-#         knn = joblib.load('knn.pkl')
+    with knn:        
+        knn = joblib.load('knn.pkl')
 #         knn = joblib.load('knn1.pkl')
         y_pred_knn = knn.predict(x_test) 
         accuracy_knn=round(accuracy_score(y_test,y_pred_knn)* 100, 2)
-#         acc_knn = round(knn.score(x_train, y_train) * 100, 2)
+        acc_knn = round(knn.score(x_train, y_train) * 100, 2)
         label_knn = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_pred_knn})
-        st.success(f'Tingkat akurasi = {accuracy_knn}%')
-#         st.dataframe(label_knn)
+        st.success(f'Tingkat akurasi = {acc_knn}%')
         label_knn
         
     with nb:
@@ -158,11 +154,11 @@ with modeling:
         from sklearn.naive_bayes import GaussianNB
 
 
-        # classifier
-        gaussian = GaussianNB()
-        # 
-        gaussian.fit(x_train, y_train)
-#         gaussian = joblib.load('gaussian.pkl')
+#         # classifier
+#         gaussian = GaussianNB()
+#         # 
+#         gaussian.fit(x_train, y_train)
+        gaussian = joblib.load('gaussian.pkl')
         y_pred_nb = gaussian.predict(x_test)
         label_nb = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_pred_nb})
@@ -193,18 +189,7 @@ with modeling:
         
     
 with implementation:
-    
-    # option = st.selectbox(
-    #      'Pilih Jenis Model yang ingin dipakai',
-    #      ('KNN', 'Home phone', 'Mobile phone'))
-    # a = options
-    # st.text('asu')
     fixedacidity=0
-    st.write("""
-    fixed acidity 
-            * hallo 
-            * hello it's me
-            """)
     fixedacidity=st.text_input('fixed acidity')
     
 
