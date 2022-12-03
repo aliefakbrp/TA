@@ -140,18 +140,18 @@ with modeling:
         label_knn
         
     with nb:
-#         # library for Naive Bayes Gaussian
-#         from sklearn.naive_bayes import GaussianNB
-#         from sklearn.metrics import accuracy_score
-#         from sklearn.metrics import make_scorer, accuracy_score,precision_score
-#         from sklearn.metrics import classification_report
-#         from sklearn.metrics import confusion_matrix
-#         from sklearn.metrics import precision_score,recall_score,f1_score
-#         from sklearn.preprocessing import LabelEncoder
+        # library for Naive Bayes Gaussian
+        from sklearn.naive_bayes import GaussianNB
+        from sklearn.metrics import accuracy_score
+        from sklearn.metrics import make_scorer, accuracy_score,precision_score
+        from sklearn.metrics import classification_report
+        from sklearn.metrics import confusion_matrix
+        from sklearn.metrics import precision_score,recall_score,f1_score
+        from sklearn.preprocessing import LabelEncoder
 
-#         #Model Select
-#         from sklearn.model_selection import train_test_split
-#         from sklearn.naive_bayes import GaussianNB
+        #Model Select
+        from sklearn.model_selection import train_test_split
+        from sklearn.naive_bayes import GaussianNB
 
 
 #         # classifier
