@@ -145,7 +145,7 @@ with modeling:
         from sklearn.metrics import accuracy_score
         from sklearn.metrics import make_scorer, accuracy_score,precision_score
         from sklearn.metrics import classification_report
-        from sklearn.metrics import confusion_matrix
+#         from sklearn.metrics import confusion_matrix
         from sklearn.metrics import precision_score,recall_score,f1_score
         from sklearn.preprocessing import LabelEncoder
 
@@ -165,7 +165,7 @@ with modeling:
         accuracy_nb=round(accuracy_score(y_test,y_pred_nb)* 100, 2)
         acc_gaussian = round(gaussian.score(x_train, y_train) * 100, 2)
 
-        cm = confusion_matrix(y_test, y_pred_nb)
+#         cm = confusion_matrix(y_test, y_pred_nb)
         accuracy = accuracy_score(y_test,y_pred_nb)
         st.success(f'Tingkat akurasi = {accuracy*100}%')
         label_nb
