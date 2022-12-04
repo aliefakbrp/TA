@@ -284,8 +284,8 @@ with implementation:
 #     pH=float(pH)
 #     sulphates=float(sulphates)
 #     alcohol=float(alcohol)
-#     x_new = [[float(fixedacidity),	float(volatileacidity), float(citricacid), float(residualsugar),	float(chlorides),	float(freesulfurdioxide),	float(totalfurdioxide), float(density),	float(pH),	float(sulphates),	float(alcohol)]]
-    x_new = [[fixedacidity,	volatileacidity, citricacid, residualsugar,	chlorides,	freesulfurdioxide,	totalfurdioxide, density,	pH,	sulphates,	alcohol]]
+    x_new = [[float(fixedacidity),	float(volatileacidity), float(citricacid), float(residualsugar),	float(chlorides),	float(freesulfurdioxide),	float(totalfurdioxide), float(density),	float(pH),	float(sulphates),	float(alcohol)]]
+#     x_new = [[fixedacidity,	volatileacidity, citricacid, residualsugar,	chlorides,	freesulfurdioxide,	totalfurdioxide, density,	pH,	sulphates,	alcohol]]
     maximal=0
     minimal=1
     for i in range(len(x_new[0])):
