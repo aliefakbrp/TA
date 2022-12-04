@@ -184,51 +184,92 @@ with modeling:
         
         
         
-        
-    
 with implementation:
     fixedacidity=0
-    fixedacidity=st.text_input('fixed acidity')
+    fixedacidity=st.text_input('fixed acidity',value=0)
     
 
     volatileacidity=0
-    volatileacidityt=st.text_input('volatile acidity')
+    volatileacidityt=st.text_input('volatile acidity',value=0)
     
 
     citricacid=0
-    citricacid=st.text_input('citric acid')
+    citricacid=st.text_input('citric acid',value=0)
     
 
     residualsugar=0
-    residualsugar=st.text_input('residual sugar')
+    residualsugar=st.text_input('residual sugar',value=0)
     
 
     chlorides=0
-    chlorides=st.text_input('chlorides')
+    chlorides=st.text_input('chlorides',value=0)
     
 
     freesulfurdioxide=0
-    freesulfurdioxide=st.text_input('free sulfur dioxide')
+    freesulfurdioxide=st.text_input('free sulfur dioxide',value=0)
     
 
     totalfurdioxide=0
-    totalfurdioxide=st.text_input('total sulfur dioxide')
+    totalfurdioxide=st.text_input('total sulfur dioxide',value=0)
     
 
     density=0
-    density=st.text_input('density')
+    density=st.text_input('density',value=0)
     
 
     pH=0
-    pH=st.text_input('pH')
+    pH=st.text_input('pH',value=0)
     
 
     sulphates=0
-    sulphates=st.text_input('sulphates')
+    sulphates=st.text_input('sulphates',value=0)
     
 
     alcohol=0
-    alcohol=st.text_input('alcohol')
+    alcohol=st.text_input('alcohol',value=0)
+# with implementation:
+#     fixedacidity=0
+#     fixedacidity=st.text_input('fixed acidity')
+    
+
+#     volatileacidity=0
+#     volatileacidityt=st.text_input('volatile acidity')
+    
+
+#     citricacid=0
+#     citricacid=st.text_input('citric acid')
+    
+
+#     residualsugar=0
+#     residualsugar=st.text_input('residual sugar')
+    
+
+#     chlorides=0
+#     chlorides=st.text_input('chlorides')
+    
+
+#     freesulfurdioxide=0
+#     freesulfurdioxide=st.text_input('free sulfur dioxide')
+    
+
+#     totalfurdioxide=0
+#     totalfurdioxide=st.text_input('total sulfur dioxide')
+    
+
+#     density=0
+#     density=st.text_input('density')
+    
+
+#     pH=0
+#     pH=st.text_input('pH')
+    
+
+#     sulphates=0
+#     sulphates=st.text_input('sulphates')
+    
+
+#     alcohol=0
+#     alcohol=st.text_input('alcohol')
     
 
 
