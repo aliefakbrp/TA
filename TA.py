@@ -136,7 +136,7 @@ with modeling:
         acc_knn = round(knn.score(x_train, y_train) * 100, 2)
         label_knn = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_pred_knn})
-        st.success(f'Tingkat akurasi = {acc_knn}%')
+        st.success(f'Level of Accuracy = {acc_knn}%')
         label_knn
         
     with nb:
@@ -159,7 +159,7 @@ with modeling:
         accuracy_nb=round(accuracy_score(y_test,y_pred_nb)* 100, 2)
         acc_gaussian = round(gaussian.score(x_train, y_train) * 100, 2)
         accuracy = accuracy_score(y_test,y_pred_nb)
-        st.success(f'Tingkat akurasi = {accuracy*100}%')
+        st.success(f'Level of Accuracy = {accuracy*100}%')
         label_nb
 
         
@@ -170,7 +170,7 @@ with modeling:
         data_predic = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_predic})
         from sklearn.metrics import accuracy_score
-        a=f'Tingkat akurasi = {"{:,.2f}".format(accuracy_score(y_test, y_predic)*100)}%'
+        a=f'Level of Accuracy = {"{:,.2f}".format(accuracy_score(y_test, y_predic)*100)}%'
         st.success(a)
         data_predic
         
