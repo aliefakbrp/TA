@@ -82,6 +82,9 @@ minmax.append(mina)
 
 st.set_page_config(page_title="Alief Akbar Purnama")
 @st.cache()
+def progress():
+    with st.spinner("Bentar ya....."):
+        time.sleep(1)
         
 st.title("UAS PENDAT")
 st.write("Disini kita akan memprediksi apakah suatu anggur memupunyai kualitas yang baik atau tidak dengan menggunakan 3 metode yaitu K-NN, Naive Bayes, dan Decision Tree. Dari ketiga metode Decision Tree mempunyai tingkat akurasi yang lebih tinggi daripada 2 metode lainnya yaitu sebesar 78,12%.")
