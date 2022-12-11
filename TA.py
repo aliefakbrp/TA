@@ -82,17 +82,15 @@ minmax.append(mina)
 
 st.set_page_config(page_title="Alief Akbar Purnama")
 @st.cache()
-def progress():
-    with st.spinner("Bentar ya....."):
-        time.sleep(1)
         
 st.title("UAS PENDAT")
+st.write("Disini kita akan memprediksi apakah suatu anggur memupunyai kualitas yang baik atau tidak dengan menggunakan 3 metode yaitu K-NN, Naive Bayes, dan Decision Tree. Dari ketiga metode Decision Tree mempunyai tingkat akurasi yang lebih tinggi daripada 2 metode lainnya yaitu sebesar 78,12%.")
 
 dataframe, preporcessing, modeling, implementation = st.tabs(
     ["Wine Quality Data", "Prepocessing", "Modeling", "Implementation"])
 
 with dataframe:
-    st.write('Data Wine Quality')
+    st.write('Data Wine Quality ')
     dataset, ket = st.tabs(['Dataset', 'Ket Dataset'])
     with ket:
         st.write("""
@@ -130,7 +128,6 @@ with modeling:
     
     with knn:        
         knn = joblib.load('knn.pkl')
-#         knn = joblib.load('knn1.pkl')
         y_pred_knn = knn.predict(x_test) 
         accuracy_knn=round(accuracy_score(y_test,y_pred_knn)* 100, 2)
         acc_knn = round(knn.score(x_train, y_train) * 100, 2)
@@ -145,7 +142,6 @@ with modeling:
         from sklearn.metrics import accuracy_score
         from sklearn.metrics import make_scorer, accuracy_score,precision_score
         from sklearn.metrics import classification_report
-#         from sklearn.metrics import confusion_matrix
         from sklearn.metrics import precision_score,recall_score,f1_score
         from sklearn.preprocessing import LabelEncoder
 
@@ -153,11 +149,6 @@ with modeling:
         from sklearn.model_selection import train_test_split
         from sklearn.naive_bayes import GaussianNB
 
-
-#         # classifier
-#         gaussian = GaussianNB()
-#         # 
-#         gaussian.fit(x_train, y_train)
         gaussian = joblib.load('gaussian.pkl')
         y_pred_nb = gaussian.predict(x_test)
         label_nb = pd.DataFrame(
@@ -176,7 +167,7 @@ with modeling:
         data_predic = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_predic})
         from sklearn.metrics import accuracy_score
-        a=f'acuraty = {"{:,.2f}".format(accuracy_score(y_test, y_predic)*100)}%'
+        a=f'Tingkat akurasi = {"{:,.2f}".format(accuracy_score(y_test, y_predic)*100)}%'
         st.success(a)
         data_predic
         
