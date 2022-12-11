@@ -175,7 +175,9 @@ with modeling:
 #         d3.fit(x_train, y_train)
         d3 = joblib.load('d3.pkl')
         y_predic = d3.predict(x_test)
-        data_predic = pd.concat([pd.DataFrame(y_test).reset_index(drop=True), pd.DataFrame(y_predic, columns=["Predict"]).reset_index(drop=True)], axis=1)        
+#         data_predic = pd.concat([pd.DataFrame(y_test).reset_index(drop=True), pd.DataFrame(y_predic, columns=["Predict"]).reset_index(drop=True)], axis=1)        
+        data_predic = pd.DataFrame(
+        data={'Label Test': y_test, 'Label Predict': y_predic})
         from sklearn.metrics import accuracy_score
         a=f'acuraty = {"{:,.2f}".format(accuracy_score(y_test, y_predic)*100)}%'
         st.success(a)
