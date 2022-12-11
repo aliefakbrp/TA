@@ -98,8 +98,8 @@ with dataframe:
     with ket:
         st.write("""
                 Data : https://www.kaggle.com/datasets/nareshbhat/wine-quality-binary-classification
-                * Informasi Data:
-                Data yang di inputkan adalah :
+                
+                The input data is
                 * fixed acidity : sebagian besar asam terlibat dengan anggur atau tetap atau tidak mudah menguap (tidak mudah menguap)
                 * volatile acidity : jumlah asam asetat dalam anggur, yang pada kadar yang terlalu tinggi dapat menyebabkan rasa cuka yang tidak enak
                 * citric acid : ditemukan dalam jumlah kecil, asam sitrat dapat menambah 'kesegaran' dan rasa anggur
