@@ -299,7 +299,7 @@ with implementation:
 #     knn = KNeighborsClassifier(n_neighbors=3)
 #     knn.fit(x_train,y_train)
     d3 = joblib.load('d3.pkl')
-    Y_pred = d3.predict(x_test)
+#     Y_pred = d3.predict(x_test)
     y_predict = d3.predict(x_new)
     hasil = f'Hasil prediksi kualitas wine adalah '+y_predict[0]
     st.success(hasil) 
