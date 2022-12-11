@@ -1,3 +1,2 @@
-# rawr
-https://aliefakbarhandsomebanget.streamlit.app/
+# Tugas Akhir Pendat
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://aliefakbarhandsomebanget.streamlit.app/)
