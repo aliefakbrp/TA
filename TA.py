@@ -301,5 +301,5 @@ with implementation:
     d3 = joblib.load('d3.pkl')
     Y_pred = d3.predict(x_test)
     y_predict = d3.predict(x_new)
-    hasil = "Hasil prediksi adalah",y_predict[0]
+    hasil = Hasil prediksi adalah,y_predict[0]
     st.success(hasil) 
