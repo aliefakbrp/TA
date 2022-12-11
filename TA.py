@@ -171,11 +171,8 @@ with modeling:
         
     with pk:
         from sklearn.tree import DecisionTreeClassifier, export_graphviz
-#         d3 = DecisionTreeClassifier()
-#         d3.fit(x_train, y_train)
         d3 = joblib.load('d3.pkl')
         y_predic = d3.predict(x_test)
-#         data_predic = pd.concat([pd.DataFrame(y_test).reset_index(drop=True), pd.DataFrame(y_predic, columns=["Predict"]).reset_index(drop=True)], axis=1)        
         data_predic = pd.DataFrame(
         data={'Label Test': y_test, 'Label Predict': y_predic})
         from sklearn.metrics import accuracy_score
@@ -229,65 +226,9 @@ with implementation:
 
     alcohol=0
     alcohol=st.text_input('alcohol',value=0)
-# with implementation:
-#     fixedacidity=0
-#     fixedacidity=st.text_input('fixed acidity')
     
-
-#     volatileacidity=0
-#     volatileacidityt=st.text_input('volatile acidity')
-    
-
-#     citricacid=0
-#     citricacid=st.text_input('citric acid')
-    
-
-#     residualsugar=0
-#     residualsugar=st.text_input('residual sugar')
-    
-
-#     chlorides=0
-#     chlorides=st.text_input('chlorides')
-    
-
-#     freesulfurdioxide=0
-#     freesulfurdioxide=st.text_input('free sulfur dioxide')
-    
-
-#     totalfurdioxide=0
-#     totalfurdioxide=st.text_input('total sulfur dioxide')
-    
-
-#     density=0
-#     density=st.text_input('density')
-    
-
-#     pH=0
-#     pH=st.text_input('pH')
-    
-
-#     sulphates=0
-#     sulphates=st.text_input('sulphates')
-    
-
-#     alcohol=0
-#     alcohol=st.text_input('alcohol')
-    
-
-
-#     fixedacidity=float(fixedacidity)
-#     volatileacidityt=float(volatileacidityt)
-#     citricacid=float(citricacid)
-#     residualsugar=float(residualsugar)
-#     chlorides=float(chlorides)
-#     freesulfurdioxide=float(freesulfurdioxide)
-#     totalfurdioxide=float(totalfurdioxide)
-#     density=float(density)
-#     pH=float(pH)
-#     sulphates=float(sulphates)
-#     alcohol=float(alcohol)
     x_new = [[float(fixedacidity),	float(volatileacidity), float(citricacid), float(residualsugar),	float(chlorides),	float(freesulfurdioxide),	float(totalfurdioxide), float(density),	float(pH),	float(sulphates),	float(alcohol)]]
-#     x_new = [[fixedacidity,	volatileacidity, citricacid, residualsugar,	chlorides,	freesulfurdioxide,	totalfurdioxide, density,	pH,	sulphates,	alcohol]]
+
     maximal=0
     minimal=1
     for i in range(len(x_new[0])):
@@ -296,10 +237,7 @@ with implementation:
       minimal+=2
     x_new
     from sklearn.neighbors import KNeighborsClassifier 
-#     knn = KNeighborsClassifier(n_neighbors=3)
-#     knn.fit(x_train,y_train)
     d3 = joblib.load('d3.pkl')
-#     Y_pred = d3.predict(x_test)
     y_predict = d3.predict(x_new)
     hasil = f'Hasil prediksi kualitas wine adalah '+y_predict[0]
     st.success(hasil) 
