@@ -234,5 +234,5 @@ with implementation:
     d3 = joblib.load('d3.pkl')
     y_predict = d3.predict(x_new)
     hasil = f'Hasil prediksi kualitas wine adalah '+y_predict[0]
-    if st.button("Prediksi"):
+    if st.button("Predict"):
         st.success(hasil) 
