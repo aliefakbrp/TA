@@ -229,10 +229,10 @@ with implementation:
       x_new[0][i]=(x_new[0][i]-minmax[minimal])/(minmax[maximal]-minmax[minimal])
       maximal+=2
       minimal+=2
-    x_new
+#     x_new
     from sklearn.neighbors import KNeighborsClassifier 
     d3 = joblib.load('d3.pkl')
     y_predict = d3.predict(x_new)
     hasil = f'Hasil prediksi kualitas wine adalah '+y_predict[0]
-    if st.button("Predict"):
+    if st.button("Prediksi"):
         st.success(hasil) 
