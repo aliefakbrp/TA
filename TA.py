@@ -171,9 +171,9 @@ with modeling:
         
     with pk:
         from sklearn.tree import DecisionTreeClassifier, export_graphviz
-        d3 = DecisionTreeClassifier()
-        d3.fit(x_train, y_train)
-#         d3 = joblib.load('d3.pkl')
+#         d3 = DecisionTreeClassifier()
+#         d3.fit(x_train, y_train)
+        d3 = joblib.load('d3.pkl')
         y_predic = d3.predict(x_test)
         data_predic = pd.concat([pd.DataFrame(y_test).reset_index(drop=True), pd.DataFrame(y_predic, columns=["Predict"]).reset_index(drop=True)], axis=1)        
         from sklearn.metrics import accuracy_score
@@ -294,8 +294,9 @@ with implementation:
       minimal+=2
     x_new
     from sklearn.neighbors import KNeighborsClassifier 
-    knn = KNeighborsClassifier(n_neighbors=3)
-    knn.fit(x_train,y_train)
-    Y_pred = knn.predict(x_test)
-    y_predict = knn.predict(x_new)
+#     knn = KNeighborsClassifier(n_neighbors=3)
+#     knn.fit(x_train,y_train)
+    d3 = joblib.load('d3.pkl')
+    Y_pred = d3.predict(x_test)
+    y_predict = d3.predict(x_new)
     st.write("Hasil prediksi adalah",y_predict[0]) 
