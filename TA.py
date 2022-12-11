@@ -126,7 +126,7 @@ with preporcessing:
 with modeling:
     # pisahkan fitur dan label
     knn, nb, pk = st.tabs(
-        ["K-Nearest Neighbor","Metode 2", "Metode 3"])
+        ["K-Nearest Neighbor","Naive Bayes", "Decision Tree"])
     
     with knn:        
         knn = joblib.load('knn.pkl')
